@@ -23,7 +23,7 @@ const Queens = () => {
           regularSeasonQueens.push(queen)
         }
       })
-      return regularSeasonQueens;
+      return regularSeasonQueens
     })
 
     const queenCards = regularSeasonQueens.map(queen => {
@@ -32,7 +32,7 @@ const Queens = () => {
             id={queen.id}
             name={queen.name}
             winner={queen.winner}
-            misCon={queen.missCongeniality}
+            missCon={queen.missCongeniality}
             img={queen.image_url}
             quote={queen.quote}
             firstSeason={queen.seasons[0].seasonNumber}
