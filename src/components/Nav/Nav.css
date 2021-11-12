@@ -44,3 +44,8 @@
 .show {
   display:block;
 }
+
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 100px;
+}
