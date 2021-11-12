@@ -12,7 +12,7 @@ const Nav = () => {
   return (
     <div className="nav">
       <div className="dropdown-container">
-        <button className="szns-btn"  onClick={toggleDropdown}>Seasons</button>
+        <button className="szns-btn"  onClick={toggleDropdown}>SEASONS</button>
         <div class="dropdown" id="myDropdown">
             <Link to="/season1"><p>Season 1</p></Link>
             <Link to="/season1"><p>Season 2</p></Link>
