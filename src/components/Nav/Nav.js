@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Search from '../Search/Search';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
