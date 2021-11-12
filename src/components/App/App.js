@@ -1,4 +1,5 @@
 import './App.css';
+import Nav from '../Nav/Nav'
 import {  useEffect, useState } from 'react';
 
 function App() {
@@ -17,9 +18,7 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <header className="App-header">
-      <h1>Ru-Pedia</h1>
-      </header>
+    <Nav />
     </div>
   );
 }

@@ -7,7 +7,7 @@ const Nav = () => {
       <button>Queens</button>
       <h1>Re-Pedia</h1>
       <Search />
-    </nav>
+    </div>
   )
 }
 
