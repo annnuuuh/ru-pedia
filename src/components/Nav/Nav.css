@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: #f433ab;
 }
 
 .szns-btn {
@@ -48,4 +49,5 @@
 h1 {
   font-family: 'Lobster', cursive;
   font-size: 100px;
+  color: #fbf5f3;
 }
