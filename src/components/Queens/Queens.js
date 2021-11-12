@@ -1,8 +1,8 @@
-import {  useEffect, useState } from 'react';
-import QueenCard from './QueenCard/QueenCard';
+import { useEffect, useState } from 'react';
+import QueenCard from '../QueenCard/QueenCard';
 
 const Queens = () => {
-    const [queens, setQueens] = useState({})
+    const [queens, setQueens] = useState([])
 
     const getQueenInfo = () => {
       return fetch('http://www.nokeynoshade.party/api/queens/all')
@@ -11,8 +11,11 @@ const Queens = () => {
 
     useEffect(() => {
       getQueenInfo()
-      .then(data => console.log(data))
-    }, []);
+      .then(data => {
+        setQueens(data)
+      })
+    }, [])
+
 
     const queenCards = queens.map(queen => {
       return (
@@ -21,7 +24,7 @@ const Queens = () => {
         name={queen.name}
         winner={queen.winner}
         misCon={queen.missCongeniality}
-        img={queen.img_url}
+        img={queen.image_url}
         quote={queen.quote}
         />
       )
