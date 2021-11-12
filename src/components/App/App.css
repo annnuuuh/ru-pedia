@@ -1,1 +1,9 @@
+* {
+  font-family: 'Antonio', sans-serif;
+  margin: 0px;
+  color: #0E1116;
+}
 
+.App {
+    background-color: #F433AB;
+}
