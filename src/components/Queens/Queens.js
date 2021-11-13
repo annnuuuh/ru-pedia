@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './Queens.css';
 import QueenCard from '../QueenCard/QueenCard';
 
 const Queens = () => {
