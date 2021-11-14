@@ -5,7 +5,7 @@ import './QueenCard.css';
 const QueenCard = ({ id, name, winner, missCon, img, quote, firstSeason }) => {
   return (
     <NavLink
-      to={`/${id}`}
+      to={`/queen/${id}`}
       key={id}
     >
       <div className="queen-card">
