@@ -1,6 +1,6 @@
 import './QueenDetails.css';
 
-const QueenDetails = () => {
+const QueenDetails = ({ id }) => {
   return (
     <p>Queen Details</p>
   )

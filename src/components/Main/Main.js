@@ -7,7 +7,17 @@ const Main = () => {
 
   return (
     <div className="main-container">
-      <Queens />
+      <Route
+        exact path="/"
+        render={() => <Queens />}
+        />
+      <Route
+        exact path="/"
+        render={({match}) => {
+          return <QueenDetails
+          id={match.params.id} />
+        }}
+        />
     </div>
   )
 }
