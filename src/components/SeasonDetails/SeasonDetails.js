@@ -14,7 +14,7 @@ const SeasonDetails = ({ id }) => {
     getSeasonDetails(id)
     .then(data => data)
     .then(season => setSeasonDetails(season))
-  }, [])
+  }, [id])
 
   return (
     <div className="season-details">
