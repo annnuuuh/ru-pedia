@@ -1,9 +1,11 @@
 import Queens from '../Queens/Queens';
-
+import './Main.css';
 const Main = () => {
 
   return (
-    <Queens />
+    <div className="main-container">
+      <Queens />
+    </div>
   )
 }
 
