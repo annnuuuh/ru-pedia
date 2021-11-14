@@ -1,5 +1,8 @@
 import Queens from '../Queens/Queens';
+import QueenDetails from '../QueenDetails/QueenDetails';
+impport { Route } from 'react-router-dom';
 import './Main.css';
+
 const Main = () => {
 
   return (
