@@ -66,16 +66,25 @@ const SeasonDetails = ({ id }) => {
 
   return (
     <div className="season-details">
-      <h3>{seasonDetails.seasonNumber}</h3>
+      <h3 className="season-title">SEASON {seasonDetails.seasonNumber}</h3>
       <img
       src={seasonDetails.image_url}
       alt={seasonDetails.name}
       className="season-banner"
       />
-      <p>Contestants:</p>
-      <div className="season-card-containers">
-        {seasonQueenCards}
-        {filteredEpisodes}
+      <div className="season-card-container">
+        <div className="contestents-container">
+          <p className="row-title">Contestants</p>
+          <div className="season-queens-container">
+            {seasonQueenCards}
+          </div>
+        </div>
+        <div className="episodes-container">
+          <p className="row-title">Episodes</p>
+          <div className="season-episodes-container">
+            {filteredEpisodes}
+          </div>
+        </div>
       </div>
     </div>
 
