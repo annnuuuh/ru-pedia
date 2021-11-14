@@ -1,18 +1,25 @@
 import React from 'react';
 import './SeasonDetails.css';
 import { useEffect, useState } from 'react';
+import { NavLink } from "react-router-dom";
 
 const SeasonDetails = ({ id }) => {
   const [seasonDetails, setSeasonDetails] = useState({})
   const [seasonQueens, setSeasonQueens] = useState([])
+  const [seasonEpisodes, setSeasonEpisodes] = useState([])
 
-  const getSeasonDetails = () => {
+  const getSeasonDetails = (id) => {
     return fetch(`http://www.nokeynoshade.party/api/seasons/${id}`)
     .then(response => response.json())
   }
 
-  const getSeasonQueens = () => {
+  const getSeasonQueens = (id) => {
     return fetch(`http://www.nokeynoshade.party/api/seasons/${id}`)
+    .then(response => response.json())
+  }
+
+  const getSeasonEpisodes = (id) => {
+    return fetch(`http://www.nokeynoshade.party/api/seasons/${id}/episodes`)
     .then(response => response.json())
   }
 
@@ -28,21 +35,48 @@ const SeasonDetails = ({ id }) => {
     .then(queen => setSeasonQueens(queen.queens))
   }, [id])
 
+  useEffect(() => {
+    getSeasonEpisodes(id)
+    .then(data => data)
+    .then(episodes => setSeasonEpisodes(episodes))
+  }, [id])
+
   const seasonQueenCards = seasonQueens.map(queen => {
     return (
-      <div className="season-queen-card">
-        <p>{queen.name}</p>
-        <p>Place: {queen.place}</p>
-      </div>
+      <NavLink to={`/queen/${queen.id}`}>
+        <div className="season-queen-card">
+          <p>{queen.name}</p>
+          <p>Place: {queen.place}</p>
+        </div>
+      </NavLink>
     )
+  })
+
+  const filteredEpisodes = seasonEpisodes.map(episode => {
+    if (episode.seasonId === seasonDetails.id) {
+      return (
+        <div className="season-episodes-card">
+        <p>Season Episode #{episode.episodeInSeason}</p>
+        <p>Title: {episode.title}</p>
+        <p>Date Originally Aired: {episode.airDate}</p>
+        </div>
+      )
+    }
   })
 
   return (
     <div className="season-details">
       <h3>{seasonDetails.seasonNumber}</h3>
-      <img src={seasonDetails.image_url} alt={seasonDetails.name}/>
+      <img
+      src={seasonDetails.image_url}
+      alt={seasonDetails.name}
+      className="season-banner"
+      />
       <p>Contestants:</p>
-      <div>{seasonQueenCards}</div>
+      <div className="season-card-containers">
+        {seasonQueenCards}
+        {filteredEpisodes}
+      </div>
     </div>
 
   )

@@ -1,0 +1,21 @@
+.season-banner {
+  width: 100%;
+  height: auto;
+}
+
+.season-card-containers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 300px;
+  background-color: rgba(201, 201, 238, 0.5);
+  border-radius: 25px;
+} */
+
+.season-queen-card, .season-episodes-card {
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
