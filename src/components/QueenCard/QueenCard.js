@@ -9,7 +9,7 @@ const QueenCard = ({ id, name, winner, missCon, img, quote, firstSeason }) => {
         <div className="text">"{quote}"</div>
       </div>
       <h3>{name}</h3>
-      <p>Season {firstSeason}</p>
+      <p>Season {firstSeason} Winner </p>
     </div>
   )
 }
