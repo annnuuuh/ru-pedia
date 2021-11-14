@@ -1,4 +1,6 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
+import './Queens.css';
 import QueenCard from '../QueenCard/QueenCard';
 
 const Queens = () => {
@@ -22,6 +24,9 @@ const Queens = () => {
       if (!season.seasonNumber.includes('A') && season.place === 1) {
         regularSeasonQueens.push(queen)
       }
+    })
+    regularSeasonQueens.sort((a, b) => {
+      return a.id - b.id
     })
     return regularSeasonQueens
   })
