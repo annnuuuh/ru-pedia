@@ -37,7 +37,7 @@ const QueenDetails = ({ id }) => {
       <img src={queenDetails.image_url} alt={queenDetails.name}/>
       <p>Notable Quote: {queenDetails.quote}</p>
       <p>Season: {queenFirstSeason.seasonNumber} Place: {queenFirstSeason.place}</p>
-      <p>Season: {queenSecondSeason.seasonNumber} Place: {queenSecondSeason.place}</p>
+      {queenSecondSeason && <p>Season: {queenSecondSeason.seasonNumber} Place: {queenSecondSeason.place}</p>}
 
     </div>
 
