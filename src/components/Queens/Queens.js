@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import './Queens.css';
 import QueenCard from '../QueenCard/QueenCard';
 
-const Queens = () => {
+const Queens = ({ filteredQueens }) => {
   const [queens, setQueens] = useState([])
   let regularSeasonQueens = [];
 
@@ -47,6 +47,7 @@ const Queens = () => {
 
   return (
     <div className="queen-card-container">
+    
     {queenCards}
     </div>
   )
