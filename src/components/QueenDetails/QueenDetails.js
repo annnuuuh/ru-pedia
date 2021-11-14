@@ -22,14 +22,13 @@ const QueenDetails = ({ id }) => {
     getQueenDetails(id)
     .then(data => data.seasons[0])
     .then(seasons => setQueenFirstSeason(seasons))
-  })
+  }, [])
 
   useEffect(() => {
     getQueenDetails(id)
     .then(data => data.seasons[1])
     .then(seasons => setQueenSecondSeason(seasons))
-  })
-
+  }, [])
 
   return (
     <div className="queen-details">
