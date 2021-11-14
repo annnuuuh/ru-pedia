@@ -1,6 +1,6 @@
 import React from 'react';
 import Search from '../Search/Search';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import './Nav.css'
 
 const Nav = () => {
@@ -28,7 +28,9 @@ const Nav = () => {
           <Link to="/season/16"><p>Season 12</p></Link>
         </div>
       </div>
+      <Link to="/">
       <h1>Ru-Pedia</h1>
+      </Link>
       <Search />
     </div>
   )
