@@ -1,5 +1,6 @@
 import React from 'react';
 import Queens from '../Queens/Queens';
+import Search from '../Search/Search';
 import QueenDetails from '../QueenDetails/QueenDetails';
 import SeasonDetails from '../SeasonDetails/SeasonDetails';
 import { Route } from 'react-router-dom';
@@ -11,7 +12,11 @@ const Main = () => {
     <div className="main-container">
     <Route
       exact path="/"
-      render= {() => <Queens />}
+      render= {() => <Search /> }
+    />
+    <Route
+      exact path="/"
+      render= {() => <Queens /> }
     />
     <Route
       exact path="/queen/:id"

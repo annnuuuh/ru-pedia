@@ -1,5 +1,4 @@
 import React from 'react';
-import Search from '../Search/Search';
 import { NavLink, Link } from 'react-router-dom';
 import './Nav.css'
 
@@ -31,7 +30,6 @@ const Nav = () => {
       <Link to="/">
       <h1>Ru-Pedia</h1>
       </Link>
-      <Search />
     </div>
   )
 }
