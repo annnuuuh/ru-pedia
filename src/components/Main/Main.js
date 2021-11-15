@@ -6,7 +6,6 @@ import SeasonDetails from '../SeasonDetails/SeasonDetails';
 import { Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getAllQueens } from '../../apiCalls';
-import './Main.css';
 
 const Main = () => {
 
