@@ -28,7 +28,7 @@ const Nav = () => {
         </div>
       </div>
       <Link to="/">
-      <h1>Ru-Pedia</h1>
+      <h1 className="app-title">Ru-Pedia</h1>
       </Link>
     </div>
   )
