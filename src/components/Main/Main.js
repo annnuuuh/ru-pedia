@@ -12,6 +12,7 @@ const Main = () => {
   const [searchValue, setSearchValue] = useState('')
   const [allQueens, setAllQueens] = useState([])
   const [filteredQueens, setFilteredQueens] = useState([])
+  const [hasSearched, setHasSearched] = useState([true])
 
   const getAllQueens = () => {
   return fetch('http://www.nokeynoshade.party/api/queens/all')
@@ -26,17 +27,25 @@ const Main = () => {
   }, []);
 
   const findQueen = (searchTerm) => {
+    setHasSearched(true)
     setFilteredQueens(allQueens.filter(queen => {
      return queen.name.includes(searchTerm)
    }))
   }
 
   const  displayQueens= () => {
-      if (filteredQueens.length > 0) {
+      if (hasSearched && filteredQueens.length > 0) {
         return (
           <div>
             <Search findQueen={findQueen}/>
             <Queens queens={filteredQueens}/>
+          </div>
+        )
+      } else if (hasSearched && filteredQueens.length === 0) {
+        return (
+          <div>
+          <Search findQueen={findQueen}/>
+          <p>No winners here, baby! Try another search.</p>
           </div>
         )
       } else {
