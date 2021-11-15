@@ -14,7 +14,8 @@
 
 
 ## Demo
-[rupediagif](https://user-images.githubusercontent.com/83973975/141868742-2f74aa13-6917-4464-a8ed-d27fbabcb2e5.gif)
+![smallergif](https://user-images.githubusercontent.com/83973975/141868996-e0f94654-40c3-417f-a03a-6eba07082899.gif)
+
 ## Deploy Link
 [Ru-Pedia](https://ru-pedia.surge.sh/)
 
