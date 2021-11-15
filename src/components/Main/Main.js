@@ -26,9 +26,11 @@ const Main = () => {
   }, []);
 
   const findQueen = (searchTerm) => {
-    setFilteredQueens(allQueens.filter(queen => {
-     return queen.name.includes(searchTerm)
-   }))
+    if (searchTerm === '') {
+      return;
+    } else {
+      setFilteredQueens(allQueens.filter(queen => queen.name.includes(searchTerm)))
+    }
   }
 
   const  displayQueens= () => {

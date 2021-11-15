@@ -26,6 +26,7 @@ class Search extends Component {
       searchTerm: '',
       hasSearched: false
     })
+    this.props.findQueen(this.state.searchTerm)
   }
 
   render() {
