@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './QueenDetails.css';
 import { useEffect, useState } from 'react';
+import { getQueenDetails } from '../../apiCalls';
 
 const QueenDetails = ({ id }) => {
   const [queenDetails, setQueenDetails] = useState({})
@@ -10,26 +11,23 @@ const QueenDetails = ({ id }) => {
   const [queenSecondSeason, setQueenSecondSeason] = useState({})
   const [error, setError] = useState(false)
 
-  const getQueenDetails = () => {
-    return fetch(`https://www.nokeynoshade.party/api/queens/${id}`)
-    .then(response => response.json())
-    .catch(error => setError(true))
-  }
-
   useEffect(() => {
     getQueenDetails(id)
+    .catch(error => setError(true))
     .then(data => data)
     .then(queen => setQueenDetails(queen))
   }, [])
 
   useEffect(() => {
     getQueenDetails(id)
+    .catch(error => setError(true))
     .then(data => data.seasons[0])
     .then(seasons => setQueenFirstSeason(seasons))
   }, [])
 
   useEffect(() => {
     getQueenDetails(id)
+    .catch(error => setError(true))
     .then(data => data.seasons[1])
     .then(seasons => setQueenSecondSeason(seasons))
   }, [])

@@ -1,6 +1,7 @@
 import React from 'react';
 import './SeasonDetails.css';
 import { useEffect, useState } from 'react';
+import { getSeasonDetails, getSeasonQueens, getSeasonEpisodes } from '../../apiCalls';
 import { NavLink } from "react-router-dom";
 
 const SeasonDetails = ({ id }) => {
@@ -8,24 +9,6 @@ const SeasonDetails = ({ id }) => {
   const [seasonQueens, setSeasonQueens] = useState([])
   const [seasonEpisodes, setSeasonEpisodes] = useState([])
   const [error, setError] = useState(false)
-
-  const getSeasonDetails = (id) => {
-    return fetch(`https://www.nokeynoshade.party/api/seasons/${id}`)
-    .then(response => response.json())
-    .catch(error => setError(true))
-  }
-
-  const getSeasonQueens = (id) => {
-    return fetch(`https://www.nokeynoshade.party/api/seasons/${id}`)
-    .then(response => response.json())
-    .catch(error => setError(true))
-  }
-
-  const getSeasonEpisodes = (id) => {
-    return fetch(`https://www.nokeynoshade.party/api/seasons/${id}/episodes`)
-    .then(response => response.json())
-    .catch(error => setError(true))
-  }
 
   useEffect(() => {
     getSeasonDetails(id)

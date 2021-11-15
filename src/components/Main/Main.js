@@ -5,22 +5,19 @@ import QueenDetails from '../QueenDetails/QueenDetails';
 import SeasonDetails from '../SeasonDetails/SeasonDetails';
 import { Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { getAllQueens } from '../../apiCalls';
 import './Main.css';
 
 const Main = () => {
 
+  const [searchValue, setSearchValue] = useState('')
   const [allQueens, setAllQueens] = useState([])
   const [filteredQueens, setFilteredQueens] = useState([])
   const [error, setError] = useState(false)
 
-  const getAllQueens = () => {
-  return fetch('https://www.nokeynoshade.party/api/queens/all')
-  .then(response => response.json())
-  .catch(error => setError(true))
-  }
-
   useEffect(() => {
     getAllQueens()
+    .catch(error => setError(true))
     .then(data => {
       setAllQueens(data)
     });
