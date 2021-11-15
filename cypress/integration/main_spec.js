@@ -94,4 +94,19 @@ describe('Main Page User Flows', () => {
     cy.get('[href="/queen/2"] > .queen-card')
     .should('be.visible')
   })
+
+  it('Should display Queen details when a Queen card is clicked', () => {
+    cy.intercept('GET', 'http://www.nokeynoshade.party/api/queens/1', { fixture: 'queen.json' })
+    .get('[href="/queen/1"] > .queen-card').click()
+    .url().should('include', '/queen/1')
+  })
+
+  it('Should display Season details when a Season Link is clicked', () => {
+    cy.intercept('GET', 'https://www.nokeynoshade.party/api/seasons/13', { fixture: 'season.json' })
+    cy.get('.szns-btn')
+    .click()
+    cy.get('[href="/season/13"] > p')
+    .click()
+    .url().should('include', '/season/13')
+  })
 })

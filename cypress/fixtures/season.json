@@ -1,0 +1,78 @@
+{
+"id": 13,
+"seasonNumber": "10",
+"winnerId": 126,
+"image_url": "https://vignette.wikia.nocookie.net/logosrupaulsdragrace/images/a/af/RPDR_S10_Banner.jpeg",
+"queens": [
+{
+"id": 131,
+"name": "Asia O'Hara",
+"place": 4
+},
+{
+"id": 132,
+"name": "Blair St. Clair",
+"place": 9
+},
+{
+"id": 127,
+"name": "Miz Cracker",
+"place": 5
+},
+{
+"id": 130,
+"name": "Monet X Change",
+"place": 6
+},
+{
+"id": 128,
+"name": "Yuhua Hamasaki",
+"place": 12
+},
+{
+"id": 129,
+"name": "Dusty Rae Bottoms",
+"place": 11
+},
+{
+"id": 133,
+"name": "Kalorie Karbdashian Williams",
+"place": 13
+},
+{
+"id": 134,
+"name": "Kameron Michaels",
+"place": 3
+},
+{
+"id": 135,
+"name": "Mayhem Miller",
+"place": 10
+},
+{
+"id": 138,
+"name": "The Vixen",
+"place": 7
+},
+{
+"id": 126,
+"name": "Aquaria",
+"place": 1
+},
+{
+"id": 136,
+"name": "Monique Heart",
+"place": 8
+},
+{
+"id": 137,
+"name": "Vanessa Vanjie Mateo",
+"place": 14
+},
+{
+"id": 110,
+"name": "Eureka O'Hara",
+"place": 2
+}
+]
+}
