@@ -12,10 +12,12 @@ const Main = () => {
   const [searchValue, setSearchValue] = useState('')
   const [allQueens, setAllQueens] = useState([])
   const [filteredQueens, setFilteredQueens] = useState([])
+  const [error, setError] = useState(false)
 
   const getAllQueens = () => {
   return fetch('https://www.nokeynoshade.party/api/queens/all')
   .then(response => response.json())
+  .catch(error => setError(true))
   }
 
   useEffect(() => {
@@ -38,14 +40,14 @@ const Main = () => {
         return (
           <div>
             <Search findQueen={findQueen}/>
-            <Queens queens={filteredQueens}/>
+            { error ? <h1>Well, this is embarassing. Seems like we've experiencing technical difficulties. Try again later.</h1> : <Queens queens={filteredQueens}/> }
           </div>
         )
       } else {
         return (
           <div>
-            <Search findQueen={findQueen}/>
-            <Queens queens={allQueens}/>
+            { error ? <h1>Well, this is embarassing. Seems like we've experiencing technical difficulties. Try again later.</h1> : <Search findQueen={findQueen}/>
+            <Queens queens={allQueens}/> }
           </div>
         )
       }
