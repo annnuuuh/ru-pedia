@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './QueenDetails.css';
 import { useEffect, useState } from 'react';
 
@@ -32,11 +33,19 @@ const QueenDetails = ({ id }) => {
 
   return (
     <div className="queen-details">
-      <h3>{queenDetails.name}</h3>
-      <img src={queenDetails.image_url} alt={queenDetails.name}/>
-      <p>Notable Quote: {queenDetails.quote}</p>
-      <p>Season: {queenFirstSeason.seasonNumber} Place: {queenFirstSeason.place}</p>
-      {queenSecondSeason && <p>Season: {queenSecondSeason.seasonNumber} Place: {queenSecondSeason.place}</p>}
+      <h3 className="name">{queenDetails.name}</h3>
+      <img
+      src={queenDetails.image_url} alt={queenDetails.name}
+      className="image"/>
+      <div className="details">
+      <p className="detail-one">Notable Quote: {queenDetails.quote}</p>
+      <p className="detail-two">Season {queenFirstSeason.seasonNumber}, Place {queenFirstSeason.place}</p>
+      {queenSecondSeason &&
+      <p className="detail-three">Season {queenSecondSeason.seasonNumber}, Place {queenSecondSeason.place}</p>}
+      <Link to="/">
+        <button className="back-button">Back</button>
+      </Link>
+      </div>
 
     </div>
 
