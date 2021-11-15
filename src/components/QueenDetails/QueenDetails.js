@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './QueenDetails.css';
 import { useEffect, useState } from 'react';
 
@@ -35,25 +36,29 @@ const QueenDetails = ({ id }) => {
 
   return (
     <div>
-    { error ? <h1>Well, this is embarassing. Seems like we've experiencing technical difficulties. Try again later.</h1> :
       <div className="queen-details">
-      <h3 className="name">{queenDetails.name}</h3>
-      <img
-      src={queenDetails.image_url} alt={queenDetails.name}
-      className="image"/>
-      <div className="details">
-        <p className="detail-one">Notable Quote: {queenDetails.quote}</p>
-        <p className="detail-two">Season {queenFirstSeason.seasonNumber}, Place {queenFirstSeason.place}</p>
-      {queenSecondSeason &&
-        <p className="detail-three">Season {queenSecondSeason.seasonNumber}, Place {queenSecondSeason.place}</p>}
-        <Link to="/">
-        <button className="back-button">Back</button>
-        </Link>
+        <h3 className="name">{queenDetails.name}</h3>
+        { error ? <p>Oh no, looks like this queen has sashayed away.</p> :
+          <img
+        src={queenDetails.image_url} alt={queenDetails.name}
+        className="image"/>
+        }
+        <div className="details">
+          <p className="detail-one">Notable Quote: {queenDetails.quote}</p>
+          <p className="detail-two">Season {queenFirstSeason.seasonNumber}, Place {queenFirstSeason.place}</p>
+          {queenSecondSeason &&
+            <p className="detail-three">Season {queenSecondSeason.seasonNumber}, Place {queenSecondSeason.place}</p>}
+            <Link to="/">
+              <button className="back-button">Back</button>
+            </Link>
+        </div>
       </div>
-    </div>
-    }
     </div>
   )
 }
 
 export default QueenDetails;
+
+QueenDetails.propTypes = {
+  id: PropTypes.string
+};
