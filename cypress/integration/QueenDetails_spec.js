@@ -1,7 +1,9 @@
 describe('Individual Queen Details User Flows', () => {
+
   beforeEach(() => {
+    cy.intercept('GET', 'https://www.nokeynoshade.party/api/queens/2', { fixture: 'queen.json' })
     cy.visit('http://localhost:3000/queen/2')
-  })
+  });
 
   it('Should see a header', () => {
     cy.get('.app-title')

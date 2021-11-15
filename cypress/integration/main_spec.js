@@ -87,9 +87,9 @@ describe('Main Page User Flows', () => {
   })
 
   it('Should display Queen details when a Queen card is clicked', () => {
-    cy.intercept('GET', 'http://www.nokeynoshade.party/api/queens/1', { fixture: 'queen.json' })
-    .get('[href="/queen/1"] > .queen-card').click()
-    .url().should('include', '/queen/1')
+    cy.intercept('GET', 'http://www.nokeynoshade.party/api/queens/2', { fixture: 'queen.json' })
+    .get('[href="/queen/2"] > .queen-card').click()
+    .url().should('include', '/queen/2')
   })
 
   it('Should display Season details when a Season Link is clicked', () => {
