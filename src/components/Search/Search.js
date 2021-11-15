@@ -6,7 +6,8 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: ''
+      searchTerm: '',
+      hasSearched: false
     }
   }
 
@@ -14,7 +15,17 @@ class Search extends Component {
     this.setState({
       [event.target.name]: event.target.value
     })
+    this.setState({
+      hasSearched: true
+    })
     this.props.findQueen(this.state.searchTerm)
+  }
+
+  clearSearch = () => {
+    this.setState({
+      searchTerm: '',
+      hasSearched: false
+    })
   }
 
   render() {
@@ -30,6 +41,7 @@ class Search extends Component {
         onChange={event => this.handleChange(event)}
         />
         </label>
+        <button onClick={this.clearSearch}>Clear Search</button>
       </form>
     )
   }
