@@ -54,7 +54,6 @@ const Main = () => {
       }
     }
 
-
   return (
     <div>
     <Route
