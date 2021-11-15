@@ -14,7 +14,7 @@
 
 
 ## Demo
-
+[rupediagif](https://user-images.githubusercontent.com/83973975/141868742-2f74aa13-6917-4464-a8ed-d27fbabcb2e5.gif)
 ## Deploy Link
 [Ru-Pedia](https://ru-pedia.surge.sh/)
 
@@ -53,7 +53,8 @@ Getting this project done! Life threw me a lot of curveballs during the project 
 ## Future Features
 
 There are so many! I'd love to add the following:
-- Sort queens by place on Season Details pages
+- Sort queens by place on Season Details pages!
+
 - Conditionally render clear button so that it only appears after the input has a value
 - Properly render error messaging for 404 errors when an image is not found
 - Figure out how to better deal with different sized images in general
