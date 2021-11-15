@@ -43,7 +43,7 @@ const QueenDetails = ({ id }) => {
       {queenSecondSeason &&
       <p className="detail-three">Season {queenSecondSeason.seasonNumber}, Place {queenSecondSeason.place}</p>}
       <Link to="/">
-        <button className="back-button">Back to All Queens</button>
+        <button className="back-button">Back</button>
       </Link>
       </div>
 
