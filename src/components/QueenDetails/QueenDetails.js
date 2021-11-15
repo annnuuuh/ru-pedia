@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './QueenDetails.css';
 import { useEffect, useState } from 'react';
 
@@ -41,6 +42,9 @@ const QueenDetails = ({ id }) => {
       <p className="detail-two">Season {queenFirstSeason.seasonNumber}, Place {queenFirstSeason.place}</p>
       {queenSecondSeason &&
       <p className="detail-three">Season {queenSecondSeason.seasonNumber}, Place {queenSecondSeason.place}</p>}
+      <Link to="/">
+        <button className="back-button">Back to All Queens</button>
+      </Link>
       </div>
 
     </div>
