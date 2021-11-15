@@ -39,15 +39,20 @@ const Main = () => {
       if (filteredQueens.length > 0) {
         return (
           <div>
-            <Search findQueen={findQueen}/>
-            { error ? <h1>Well, this is embarassing. Seems like we've experiencing technical difficulties. Try again later.</h1> : <Queens queens={filteredQueens}/> }
+            <div>
+              <Search findQueen={findQueen}/>
+              { error ? <h1>Well, this is embarassing. Seems like we've experiencing technical difficulties. Try again later.</h1> : <Queens queens={filteredQueens}/> }
+            </div>
           </div>
         )
       } else {
         return (
           <div>
-            { error ? <h1>Well, this is embarassing. Seems like we've experiencing technical difficulties. Try again later.</h1> : <Search findQueen={findQueen}/>
-            <Queens queens={allQueens}/> }
+            <div>
+              <Search findQueen={findQueen} />
+              { error ? <h1>Well, this is embarassing. Seems like we've experiencing technical difficulties. Try again later.</h1> :
+              <Queens queens={allQueens} /> }
+            </div>
           </div>
         )
       }
