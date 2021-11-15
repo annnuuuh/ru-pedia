@@ -32,7 +32,7 @@ class Search extends Component {
 
     return (
       <form className="search">
-        <label>Find a Queen
+        <label>Find a Queen:
         <input
         type="text"
         name="searchTerm"
@@ -41,7 +41,8 @@ class Search extends Component {
         onChange={event => this.handleChange(event)}
         />
         </label>
-        <button onClick={this.clearSearch}>Clear Search</button>
+        <button onClick={this.clearSearch}>
+          Clear Search</button>
       </form>
     )
   }

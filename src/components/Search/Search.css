@@ -1,6 +1,6 @@
 input {
   background-color: #FBF5F3;
-  width: 300px;
+  width: 600px;
   height: 36px;
   border-radius: 50px;
   border: none;
@@ -8,4 +8,37 @@ input {
   font-size: 16px;
   color: #0E1116;
   letter-spacing: 0.75px;
+  margin-top: 50px;
+  margin-left: 20px;
 }
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  font-size: 20px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FBF5F3;
+  width: 100px;
+  height: 25px;
+  border-radius: 50px;
+  color: #0E1116;
+  padding: 10px;
+  font-size: 12px;
+  letter-spacing: 0.75px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  }
+
+  button:hover {
+    background-color: #CB04A5;
+  }
