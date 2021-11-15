@@ -75,7 +75,7 @@ const SeasonDetails = ({ id }) => {
             </div>
           </div>
         </div>
-      </div>}
+      </div> }
     </div>
 
   )

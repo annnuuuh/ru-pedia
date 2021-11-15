@@ -37,18 +37,18 @@ const QueenDetails = ({ id }) => {
       <div className="queen-details">
         <h3 className="name">{queenDetails.name}</h3>
         { error ? <p>Oh no, looks like this queen has sashayed away.</p> :
-          <img
-        src={queenDetails.image_url} alt={queenDetails.name}
-        className="image"/>
-        }
+        <img
+        src={queenDetails.image_url}
+        alt={queenDetails.name}
+        className="image"/> }
         <div className="details">
           <p className="detail-one">Notable Quote: {queenDetails.quote}</p>
           <p className="detail-two">Season {queenFirstSeason.seasonNumber}, Place {queenFirstSeason.place}</p>
           {queenSecondSeason &&
-            <p className="detail-three">Season {queenSecondSeason.seasonNumber}, Place {queenSecondSeason.place}</p>}
-            <Link to="/">
-              <button className="back-button">Back</button>
-            </Link>
+          <p className="detail-three">Season {queenSecondSeason.seasonNumber}, Place {queenSecondSeason.place}</p>}
+          <Link to="/">
+            <button className="back-button">Back</button>
+          </Link>
         </div>
       </div>
     </div>

@@ -20,7 +20,6 @@ const Queens = ({ queens }) => {
 
   return (
     <div className="queen-card-container">
-
     {queenCards}
     </div>
   )
