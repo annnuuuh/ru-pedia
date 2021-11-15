@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import './Search.css';
 
 class Search extends Component {
@@ -50,3 +50,7 @@ class Search extends Component {
 }
 
 export default Search;
+
+Search.propTypes = {
+  findQueen: PropTypes.func
+};

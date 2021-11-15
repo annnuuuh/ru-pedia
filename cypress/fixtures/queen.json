@@ -1,15 +1,45 @@
 {
-"id": 1,
-"name": "Victoria 'Porkchop' Parker",
+"id": 2,
+"name": "Tammie Brown",
 "winner": false,
 "missCongeniality": false,
-"image_url": "http://www.nokeynoshade.party/images/victoria-porkchop-parker.jpg",
-"quote": "I want a snickers!",
+"image_url": "http://www.nokeynoshade.party/images/tammie-brown.jpg",
+"quote": "I can get jiggy, I can get jiggy and wiggy!",
 "challenges": [
 {
 "id": 1,
 "type": "main",
 "description": "Sexy Photo Shoot & Thrift Store outfits",
+"won": false
+},
+{
+"id": 2,
+"type": "mini",
+"description": "Act out certain emotions and take pictures of themselves with a digital camera",
+"won": false
+},
+{
+"id": 3,
+"type": "main",
+"description": "Destiny's Child girl group battle",
+"won": false
+},
+{
+"id": 80,
+"type": "main",
+"description": "Create an \"Opposites Attract\" photoshoot and a \"half-baked\" photo",
+"won": false
+},
+{
+"id": 81,
+"type": "mini",
+"description": "How well they know their partners in a newly wed style game.",
+"won": false
+},
+{
+"id": 82,
+"type": "main",
+"description": "RuPaul Gaff-In Variety Show Doing Celebrity Impersonations.",
 "won": false
 }
 ],
@@ -20,21 +50,53 @@
 "episodeInSeason": 1,
 "title": "Drag on a Dime",
 "airDate": "2009-02-02"
+},
+{
+"id": 9,
+"seasonId": 1,
+"episodeInSeason": 2,
+"title": "Girl Groups",
+"airDate": "2009-02-09"
+},
+{
+"id": 59,
+"seasonId": 5,
+"episodeInSeason": 1,
+"title": "It Takes Two",
+"airDate": "2012-10-22"
+},
+{
+"id": 60,
+"seasonId": 5,
+"episodeInSeason": 2,
+"title": "RuPaul's Gaff-In",
+"airDate": "2012-10-29"
 }
 ],
 "lipsyncs": [
 {
-"id": 1,
+"id": 2,
 "won": false,
-"name": "Supermodel",
-"artist": "RuPaul"
+"name": "We Break the Dawn",
+"artist": "Michelle Williams"
+},
+{
+"id": 44,
+"won": false,
+"name": "There's No Business Like Show Business",
+"artist": "Ethel Merman"
 }
 ],
 "seasons": [
 {
 "seasonNumber": "1",
 "id": 1,
-"place": 9
+"place": 8
+},
+{
+"seasonNumber": "A1",
+"id": 5,
+"place": 10
 }
 ]
 }

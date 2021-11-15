@@ -5,21 +5,18 @@ import QueenDetails from '../QueenDetails/QueenDetails';
 import SeasonDetails from '../SeasonDetails/SeasonDetails';
 import { Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import './Main.css';
+import { getAllQueens } from '../../apiCalls';
 
 const Main = () => {
 
   const [searchValue, setSearchValue] = useState('')
   const [allQueens, setAllQueens] = useState([])
   const [filteredQueens, setFilteredQueens] = useState([])
-
-  const getAllQueens = () => {
-  return fetch('https://www.nokeynoshade.party/api/queens/all')
-  .then(response => response.json())
-  }
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     getAllQueens()
+    .catch(error => setError(true))
     .then(data => {
       setAllQueens(data)
     });
@@ -37,20 +34,24 @@ const Main = () => {
       if (filteredQueens.length > 0) {
         return (
           <div>
-            <Search findQueen={findQueen}/>
-            <Queens queens={filteredQueens}/>
+            <div>
+              <Search findQueen={findQueen}/>
+              { error ? <h1>Well, this is embarassing. Seems like we've experiencing technical difficulties. Try again later.</h1> : <Queens queens={filteredQueens}/> }
+            </div>
           </div>
         )
       } else {
         return (
           <div>
-            <Search findQueen={findQueen}/>
-            <Queens queens={allQueens}/>
+            <div>
+              <Search findQueen={findQueen} />
+              { error ? <h1>Well, this is embarassing. Seems like we've experiencing technical difficulties. Try again later.</h1> :
+              <Queens queens={allQueens} /> }
+            </div>
           </div>
         )
       }
     }
-
 
   return (
     <div>

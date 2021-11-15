@@ -1,5 +1,6 @@
 import React from 'react';
 import './Queens.css';
+import PropTypes from 'prop-types';
 import QueenCard from '../QueenCard/QueenCard';
 
 const Queens = ({ queens }) => {
@@ -19,10 +20,13 @@ const Queens = ({ queens }) => {
 
   return (
     <div className="queen-card-container">
-
     {queenCards}
     </div>
   )
 }
 
-export default Queens
+export default Queens;
+
+Queens.propTypes = {
+  queens: PropTypes.array
+};

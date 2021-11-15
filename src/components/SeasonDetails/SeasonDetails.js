@@ -1,27 +1,14 @@
 import React from 'react';
 import './SeasonDetails.css';
 import { useEffect, useState } from 'react';
+import { getSeasonDetails, getSeasonQueens, getSeasonEpisodes } from '../../apiCalls';
 import { NavLink } from "react-router-dom";
 
 const SeasonDetails = ({ id }) => {
   const [seasonDetails, setSeasonDetails] = useState({})
   const [seasonQueens, setSeasonQueens] = useState([])
   const [seasonEpisodes, setSeasonEpisodes] = useState([])
-
-  const getSeasonDetails = (id) => {
-    return fetch(`https://www.nokeynoshade.party/api/seasons/${id}`)
-    .then(response => response.json())
-  }
-
-  const getSeasonQueens = (id) => {
-    return fetch(`https://www.nokeynoshade.party/api/seasons/${id}`)
-    .then(response => response.json())
-  }
-
-  const getSeasonEpisodes = (id) => {
-    return fetch(`https://www.nokeynoshade.party/api/seasons/${id}/episodes`)
-    .then(response => response.json())
-  }
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     getSeasonDetails(id)
@@ -65,27 +52,30 @@ const SeasonDetails = ({ id }) => {
   })
 
   return (
-    <div className="season-details">
-      <h3 className="season-title">SEASON {seasonDetails.seasonNumber}</h3>
-      <img
-      src={seasonDetails.image_url}
-      alt={seasonDetails.name}
-      className="season-banner"
-      />
-      <div className="season-card-container">
-        <div className="contestents-container">
-          <p className="row-title">Contestants</p>
-          <div className="season-queens-container">
-            {seasonQueenCards}
+    <div>
+      { error ? <h1>Well, this is embarassing. Seems like we've experiencing technical difficulties. Try again later.</h1> :
+        <div className="season-details">
+        <h3 className="season-title">SEASON {seasonDetails.seasonNumber}</h3>
+        <img
+        src={seasonDetails.image_url}
+        alt={seasonDetails.name}
+        className="season-banner"
+        />
+        <div className="season-card-container">
+          <div className="contestents-container">
+            <p className="row-title">Contestants</p>
+            <div className="season-queens-container">
+              {seasonQueenCards}
+            </div>
+          </div>
+          <div className="episodes-container">
+            <p className="row-title">Episodes</p>
+            <div className="season-episodes-container">
+              {filteredEpisodes}
+            </div>
           </div>
         </div>
-        <div className="episodes-container">
-          <p className="row-title">Episodes</p>
-          <div className="season-episodes-container">
-            {filteredEpisodes}
-          </div>
-        </div>
-      </div>
+      </div> }
     </div>
 
   )
