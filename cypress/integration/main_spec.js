@@ -1,7 +1,8 @@
 describe('Main Page User Flows', () => {
 
   beforeEach(() => {
-    cy.visit('http://localhost:3000');
+    cy.intercept('GET', 'http://www.nokeynoshade.party/api/queens/all', { fixture: 'queens.json' })
+    cy.visit('http://localhost:3000')
   });
 
   it('Should see a header', () => {
@@ -61,16 +62,6 @@ describe('Main Page User Flows', () => {
     .click()
     cy.get('[href="/season/1"] > p')
     .should('be.hidden')
-  })
-
-  it('Should be able to search for a Queen and only see Queens that match the search', () => {
-    cy.get('input')
-    .type('Bebe')
-    .should('have.value', 'Bebe')
-    // cy.get('#id12')
-    // .should('be.visible')
-    // cy.get('#id1')
-    // .should('be.hidden')
   })
 
   it('Should be able to clear the search and see all queens again', () => {
