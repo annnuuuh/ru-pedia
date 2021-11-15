@@ -9,7 +9,7 @@ const QueenDetails = ({ id }) => {
   const [queenSecondSeason, setQueenSecondSeason] = useState({})
 
   const getQueenDetails = () => {
-    return fetch(`http://www.nokeynoshade.party/api/queens/${id}`)
+    return fetch(`https://www.nokeynoshade.party/api/queens/${id}`)
     .then(response => response.json())
   }
 

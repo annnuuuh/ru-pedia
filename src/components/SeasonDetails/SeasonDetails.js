@@ -9,17 +9,17 @@ const SeasonDetails = ({ id }) => {
   const [seasonEpisodes, setSeasonEpisodes] = useState([])
 
   const getSeasonDetails = (id) => {
-    return fetch(`http://www.nokeynoshade.party/api/seasons/${id}`)
+    return fetch(`https://www.nokeynoshade.party/api/seasons/${id}`)
     .then(response => response.json())
   }
 
   const getSeasonQueens = (id) => {
-    return fetch(`http://www.nokeynoshade.party/api/seasons/${id}`)
+    return fetch(`https://www.nokeynoshade.party/api/seasons/${id}`)
     .then(response => response.json())
   }
 
   const getSeasonEpisodes = (id) => {
-    return fetch(`http://www.nokeynoshade.party/api/seasons/${id}/episodes`)
+    return fetch(`https://www.nokeynoshade.party/api/seasons/${id}/episodes`)
     .then(response => response.json())
   }
 

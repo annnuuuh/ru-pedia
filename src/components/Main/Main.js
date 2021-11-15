@@ -14,7 +14,7 @@ const Main = () => {
   const [filteredQueens, setFilteredQueens] = useState([])
 
   const getAllQueens = () => {
-  return fetch('http://www.nokeynoshade.party/api/queens/all')
+  return fetch('https://www.nokeynoshade.party/api/queens/all')
   .then(response => response.json())
   }
 
