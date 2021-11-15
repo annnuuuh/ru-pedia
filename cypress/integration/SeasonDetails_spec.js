@@ -1,7 +1,8 @@
 describe('Season Details User Flows', () => {
 
   beforeEach(() => {
-    cy.visit('http://localhost:3000/season/13');
+    cy.intercept('GET', 'https://www.nokeynoshade.party/api/seasons/13', { fixture: 'season.json' })
+    cy.visit('http://localhost:3000/season/13')
   });
 
   it('Should see a header', () => {
