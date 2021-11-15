@@ -63,29 +63,35 @@ describe('Main Page User Flows', () => {
     .should('be.hidden')
   })
 
-  it('Should be able to search for a Queen', () => {
+  it('Should be able to search for a Queen and only see Queens that match the search', () => {
     cy.get('input')
     .type('Bebe')
     .should('have.value', 'Bebe')
+    // cy.get('#id12')
+    // .should('be.visible')
+    // cy.get('#id1')
+    // .should('be.hidden')
   })
 
-  // it('Should be able to clear the search and see all queens again', () => {
-  //   cy.get('.search > button')
-  //   .click()
-  //   cy.get('input')
-  //   .type('Bebe')
-  //   cy.get('#id1')
-  //   .should('be.visible')
-  // })
-
-  it('Should only see queens that match search', () => {
+  it('Should be able to clear the search and see all queens again', () => {
     cy.get('.search > button')
     .click()
-    cy.get('input')
-    .type('Bebe')
-    cy.get('#id12')
+    cy.get('#id1')
     .should('be.visible')
-    cy.get('#id12')
-    .should('be.hidden')
+    cy.get('#id14')
+    .should('be.visible')
+    cy.get('#id24')
+    .should('be.visible')
+    cy.get('#id32')
+    .should('be.visible')
+  })
+
+  it('Should see a card for each Queen', () => {
+    cy.get('#id1')
+    .should('be.visible')
+    cy.get('[href="/queen/2"] > .queen-card > h3')      .should('be.visible')
+    .contains('Tammie Brown')
+    cy.get('[href="/queen/2"] > .queen-card')
+    .should('be.visible')
   })
 })
