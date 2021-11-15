@@ -10,6 +10,13 @@ class Search extends Component {
     }
   }
 
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+    this.props.findQueen(this.state.searchTerm)
+  }
+
   render() {
 
     return (
@@ -17,9 +24,10 @@ class Search extends Component {
         <label>Find a Queen
         <input
         type="text"
-        name="input"
+        name="searchTerm"
         placeholder="She done already done had herses..."
-        onChange={this.props.handleChange}
+        value={this.state.searchTerm}
+        onChange={event => this.handleChange(event)}
         />
         </label>
       </form>

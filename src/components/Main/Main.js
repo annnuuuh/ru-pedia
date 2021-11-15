@@ -13,11 +13,10 @@ const Main = () => {
   const [allQueens, setAllQueens] = useState([])
   const [filteredQueens, setFilteredQueens] = useState([])
 
-
   const getAllQueens = () => {
   return fetch('http://www.nokeynoshade.party/api/queens/all')
   .then(response => response.json())
-}
+  }
 
   useEffect(() => {
     getAllQueens()
@@ -26,28 +25,25 @@ const Main = () => {
     });
   }, []);
 
-  const handleChange = (event) => {
-    setSearchValue(event.target.value)
-    findQueen(searchValue)
-    }
-
-  const findQueen = (searchValue) => {
-    setFilteredQueens(allQueens.filter(queen => queen.name.includes(searchValue)))
+  const findQueen = (searchTerm) => {
+    setFilteredQueens(allQueens.filter(queen => {
+     return queen.name.includes(searchTerm)
+   }))
   }
 
   const  displayQueens= () => {
-      if (searchValue.length > 0) {
+      if (filteredQueens.length > 0) {
         return (
           <div>
-            <Search handleChange={handleChange}/>
+            <Search findQueen={findQueen}/>
             <Queens queens={filteredQueens}/>
           </div>
         )
       } else {
         return (
           <div>
-            <Search handleChange={handleChange}/>
-            <Queens />
+            <Search findQueen={findQueen}/>
+            <Queens queens={allQueens}/>
           </div>
         )
       }
@@ -55,14 +51,10 @@ const Main = () => {
 
 
   return (
-    <div className="main-container">
+    <div>
     <Route
       exact path="/"
-      render= {() => <Search handleChange={handleChange}/> }
-    />
-    <Route
-      exact path="/"
-      render= {() => <Queens /> }
+      render={displayQueens}
     />
     <Route
       exact path="/queen/:id"
