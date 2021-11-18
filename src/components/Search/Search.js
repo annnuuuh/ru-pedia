@@ -29,6 +29,13 @@ class Search extends Component {
     this.props.findQueen(this.state.searchTerm)
   }
 
+  displayClearButton = () => {
+    return (
+      <button onClick={this.clearSearch}>
+        Clear Search</button>
+    )
+  }
+
   render() {
 
     return (
@@ -42,8 +49,8 @@ class Search extends Component {
         onChange={event => this.handleChange(event)}
         />
         </label>
-        <button onClick={this.clearSearch}>
-          Clear Search</button>
+        {this.state.hasSearched && <button onClick={this.clearSearch}>
+          Clear Search</button>}
       </form>
     )
   }
