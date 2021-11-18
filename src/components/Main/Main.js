@@ -4,6 +4,7 @@ import Search from '../Search/Search';
 import QueenDetails from '../QueenDetails/QueenDetails';
 import SeasonDetails from '../SeasonDetails/SeasonDetails';
 import { Route } from 'react-router-dom';
+import './main.css';
 import { useEffect, useState } from 'react';
 import { getAllQueens } from '../../apiCalls';
 
@@ -36,7 +37,12 @@ const Main = () => {
           <div>
             <div>
               <Search findQueen={findQueen}/>
-              { error ? <h1>Well, this is embarassing. Seems like we've experiencing technical difficulties. Try again later.</h1> : <Queens queens={filteredQueens}/> }
+              <div className="welcome-message">
+              <h4>
+                Welcome to the main stage of Ru-Pedia! Your one stop shop for catching up on ALL the tea, henny! Browse each season or search for your favorite queen. Shantay you stay!
+              </h4>
+              </div>
+              { error ? <h4>Well, this is embarassing. Seems like we've experiencing technical difficulties. Sashay away!</h4> : <Queens queens={filteredQueens}/> }
             </div>
           </div>
         )
@@ -45,12 +51,25 @@ const Main = () => {
           <div>
             <div>
               <Search findQueen={findQueen} />
-              { error ? <h1>Well, this is embarassing. Seems like we've experiencing technical difficulties. Try again later.</h1> :
+              <div className="welcome-message">
+              <h4>
+                Welcome to the main stage of Ru-Pedia! Your one stop shop for catching up on ALL the tea, henny! Browse each season or search for your favorite queen. Shantay you stay!
+              </h4>
+              </div>
+              { error ? <h4>Well, this is embarassing. Seems like we've experiencing technical difficulties. Try again later.</h4> :
               <Queens queens={allQueens} /> }
             </div>
           </div>
         )
       }
+    }
+
+    const mainParagraph = () => {
+      return (
+        <p className="welcome-message">
+          Welcome to the main stage of Ru-Pedia -- your one stop shop for catching up on ALL the tea, henny! Browse each season or search for your favorite queen. Shantay you stay!
+        </p>
+      )
     }
 
   return (
