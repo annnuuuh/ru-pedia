@@ -14,22 +14,11 @@ const QueenDetails = ({ id }) => {
   useEffect(() => {
     getQueenDetails(id)
     .catch(error => setError(true))
-    .then(data => data)
-    .then(queen => setQueenDetails(queen))
-  }, [])
-
-  useEffect(() => {
-    getQueenDetails(id)
-    .catch(error => setError(true))
-    .then(data => data.seasons[0])
-    .then(seasons => setQueenFirstSeason(seasons))
-  }, [])
-
-  useEffect(() => {
-    getQueenDetails(id)
-    .catch(error => setError(true))
-    .then(data => data.seasons[1])
-    .then(seasons => setQueenSecondSeason(seasons))
+    .then(data => {
+      setQueenDetails(data)
+      setQueenFirstSeason(data.seasons[0])
+      setQueenSecondSeason(data.seasons[1])
+    })
   }, [])
 
   return (
