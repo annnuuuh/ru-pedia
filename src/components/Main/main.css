@@ -1,0 +1,15 @@
+.welcome-message {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  font-size: 40px;
+  min-height: 200px;
+  background-color: #CB04A5;
+  padding: 25px;
+}
+
+.welcome-message > h4 {
+  color: black;
+  text-align: center;
+}
