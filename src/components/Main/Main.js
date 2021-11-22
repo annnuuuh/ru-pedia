@@ -24,12 +24,8 @@ const Main = () => {
   }, []);
 
   const findQueen = (searchTerm) => {
-    if (searchTerm === '') {
-      return;
-    } else {
       setFilteredQueens(allQueens.filter(queen => queen.name.includes(searchTerm)))
     }
-  }
 
   const  displayQueens= () => {
       if (filteredQueens.length > 0) {
@@ -62,14 +58,6 @@ const Main = () => {
           </div>
         )
       }
-    }
-
-    const mainParagraph = () => {
-      return (
-        <p className="welcome-message">
-          Welcome to the main stage of Ru-Pedia -- your one stop shop for catching up on ALL the tea, henny! Browse each season or search for your favorite queen. Shantay you stay!
-        </p>
-      )
     }
 
   return (

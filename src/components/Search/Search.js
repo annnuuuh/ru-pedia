@@ -6,17 +6,13 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: '',
-      hasSearched: false
+      searchTerm: ''
     }
   }
 
   handleChange = (event) => {
     this.setState({
-      [event.target.name]: event.target.value
-    })
-    this.setState({
-      hasSearched: true
+      searchTerm: event.target.value,
     })
     this.props.findQueen(this.state.searchTerm)
   }
@@ -24,16 +20,8 @@ class Search extends Component {
   clearSearch = () => {
     this.setState({
       searchTerm: '',
-      hasSearched: false
     })
-    this.props.findQueen(this.state.searchTerm)
-  }
-
-  displayClearButton = () => {
-    return (
-      <button onClick={this.clearSearch}>
-        Clear Search</button>
-    )
+    window.location.reload(true)
   }
 
   render() {
@@ -49,7 +37,7 @@ class Search extends Component {
         onChange={event => this.handleChange(event)}
         />
         </label>
-        {this.state.hasSearched && <button onClick={this.clearSearch}>
+        {this.state.searchTerm.length > 0 && <button onClick={this.clearSearch}>
           Clear Search</button>}
       </form>
     )
