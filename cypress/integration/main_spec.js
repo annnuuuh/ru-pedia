@@ -1,8 +1,7 @@
 describe('Main Page User Flows', () => {
 
   beforeEach(() => {
-    cy.intercept('GET', 'http://www.nokeynoshade.party/api/queens/all', { fixture: 'queens.json' })
-    cy.visit('http://localhost:3000')
+    cy.visit('http://localhost:3000');
   });
 
   it('Should see a header', () => {
@@ -64,6 +63,16 @@ describe('Main Page User Flows', () => {
     .should('be.hidden')
   })
 
+  it('Should be able to search for a Queen and only see Queens that match the search', () => {
+    cy.get('input')
+    .type('Bebe')
+    .should('have.value', 'Bebe')
+    // cy.get('#id12')
+    // .should('be.visible')
+    // cy.get('#id1')
+    // .should('be.hidden')
+  })
+
   it('Should be able to clear the search and see all queens again', () => {
     cy.get('.search > button')
     .click()
@@ -87,9 +96,9 @@ describe('Main Page User Flows', () => {
   })
 
   it('Should display Queen details when a Queen card is clicked', () => {
-    cy.intercept('GET', 'http://www.nokeynoshade.party/api/queens/2', { fixture: 'queen.json' })
-    .get('[href="/queen/2"] > .queen-card').click()
-    .url().should('include', '/queen/2')
+    cy.intercept('GET', 'http://www.nokeynoshade.party/api/queens/1', { fixture: 'queen.json' })
+    .get('[href="/queen/1"] > .queen-card').click()
+    .url().should('include', '/queen/1')
   })
 
   it('Should display Season details when a Season Link is clicked', () => {
