@@ -1,19 +1,16 @@
 describe('Main Page User Flows', () => {
-
   beforeEach(() => {
-    cy.visit('http://localhost:3000');
+    cy.intercept('GET', 'http://www.nokeynoshade.party/api/queens/all', { fixture: 'queens.json' })
+    cy.visit('http://localhost:3000')
   });
-
   it('Should see a header', () => {
     cy.get('.app-title')
     .contains('Ru-Pedia')
   });
-
   it('Should see a button', () => {
     cy.get('.szns-btn')
     cy.contains('SEASONS')
   });
-
   it('Should see a drop down when button is clicked', () => {
     cy.get('.szns-btn')
     .click()
@@ -54,7 +51,6 @@ describe('Main Page User Flows', () => {
     .should('be.visible')
     .contains('Season 12')
   })
-
   it('Should no longer see the dropdown when the seasons button is clicked again', () => {
     cy.get('.szns-btn')
     .click()
@@ -62,17 +58,6 @@ describe('Main Page User Flows', () => {
     cy.get('[href="/season/1"] > p')
     .should('be.hidden')
   })
-
-  it('Should be able to search for a Queen and only see Queens that match the search', () => {
-    cy.get('input')
-    .type('Bebe')
-    .should('have.value', 'Bebe')
-    // cy.get('#id12')
-    // .should('be.visible')
-    // cy.get('#id1')
-    // .should('be.hidden')
-  })
-
   it('Should be able to clear the search and see all queens again', () => {
     cy.get('.search > button')
     .click()
@@ -85,7 +70,6 @@ describe('Main Page User Flows', () => {
     cy.get('#id32')
     .should('be.visible')
   })
-
   it('Should see a card for each Queen', () => {
     cy.get('#id1')
     .should('be.visible')
@@ -94,13 +78,11 @@ describe('Main Page User Flows', () => {
     cy.get('[href="/queen/2"] > .queen-card')
     .should('be.visible')
   })
-
   it('Should display Queen details when a Queen card is clicked', () => {
-    cy.intercept('GET', 'http://www.nokeynoshade.party/api/queens/1', { fixture: 'queen.json' })
-    .get('[href="/queen/1"] > .queen-card').click()
-    .url().should('include', '/queen/1')
+    cy.intercept('GET', 'http://www.nokeynoshade.party/api/queens/2', { fixture: 'queen.json' })
+    .get('[href="/queen/2"] > .queen-card').click()
+    .url().should('include', '/queen/2')
   })
-
   it('Should display Season details when a Season Link is clicked', () => {
     cy.intercept('GET', 'https://www.nokeynoshade.party/api/seasons/13', { fixture: 'season.json' })
     cy.get('.szns-btn')
