@@ -8,7 +8,6 @@ const SeasonDetails = ({ id }) => {
   const [seasonDetails, setSeasonDetails] = useState({})
   const [seasonQueens, setSeasonQueens] = useState([])
   const [seasonEpisodes, setSeasonEpisodes] = useState([])
-  const [error, setError] = useState(false)
 
   useEffect(() => {
     getSeasonDetails(id)

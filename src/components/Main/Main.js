@@ -10,7 +10,6 @@ import { getAllQueens } from '../../apiCalls';
 
 const Main = () => {
 
-  const [searchValue, setSearchValue] = useState('')
   const [allQueens, setAllQueens] = useState([])
   const [filteredQueens, setFilteredQueens] = useState([])
   const [error, setError] = useState(false)
