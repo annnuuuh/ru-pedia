@@ -14,7 +14,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-      "start": "my-server -p 3030",
+      "start": "my-server -p 3000",
       "cy:run": "cypress run",
       "test": "start-server-and-test start http://localhost:3030 cy:run"
     },
