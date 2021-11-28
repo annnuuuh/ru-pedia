@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import './SeasonDetails.css';
 import { useEffect, useState } from 'react';
@@ -49,6 +50,7 @@ const SeasonDetails = ({ id }) => {
         </div>
       )
     }
+    return;
   })
 
   return (
